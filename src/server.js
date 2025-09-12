@@ -2,12 +2,13 @@ import express from 'express';
 import pino from 'pino-http';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { getEnvVar } from './utils/getEnvVar';
 
 dotenv.config();
 
 export const setupServer = () => {
     const app = express();
-    const PORT = Number(process.env.PORT) || 3000;
+    const PORT = Number(getEnvVar('PORT', '3000'));
 
     app.use(express.json());
 
@@ -25,7 +26,7 @@ export const setupServer = () => {
         res.json({ message: 'Server is working' });
     });
 
-    // оброблємо запити до неіснуючих  маршрутів
+    // обробляємо запити до неіснуючих  маршрутів
 app.use((req, res, next) => {
     res.status(404).json({
         message: 'Not found'
