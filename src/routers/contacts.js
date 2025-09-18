@@ -1,10 +1,11 @@
 import { Router } from 'express';
 import { getContactsController, getContactsByIdController } from '../controllers/contacts.js';
+import { ctrlWrapper } from '../utils/ctrlWrapper';
 
 const router = Router();
 
-router.get('/contacts', getContactsController);
+router.get('/', ctrlWrapper(getContactsController));
 
-router.get('/contacts/:contactId', getContactsByIdController);
+router.get('/:contactId', ctrlWrapper(getContactsByIdController));
 
 export default router;
