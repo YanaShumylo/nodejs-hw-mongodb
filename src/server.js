@@ -3,9 +3,9 @@ import pino from 'pino-http';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import { getEnvVar } from './utils/getEnvVar.js';
-import contactsRouter from './routers/contacts.js';
 import { errorHandler } from './middlewares/errorHandler.js';
 import { notFoundHandler } from './middlewares/notFoundHandler.js';
+import router from './routers/index.js';
 
 dotenv.config();
 
@@ -30,7 +30,7 @@ export const setupServer = () => {
     });
 
     // додаємо роутер до арр
-    app.use('/contacts', contactsRouter);
+    app.use('/', router);
 
     // обробляємо запити до неіснуючих  маршрутів
     app.use(notFoundHandler);
