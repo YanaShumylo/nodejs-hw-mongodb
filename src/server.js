@@ -18,7 +18,7 @@ export const setupServer = () => {
 
     app.use(cors());
 
-    app.use(cookieParser);
+    app.use(cookieParser());
 
     app.use(
         pino({
