@@ -5,6 +5,8 @@ import { registerUserController, loginUserController, logoutUserController, refr
 import { validateBody } from '../middlewares/validateBody.js';
 import { requestResetEmailSchema } from '../validation/auth.js';
 import { requestResetEmailController } from '../controllers/auth.js';
+import { resetPasswordSchema } from '../validation/auth.js';
+import { resetPasswordController } from '../controllers/auth.js';
 
 const router = express.Router();
 
@@ -30,6 +32,12 @@ router.post(
   '/send-reset-email',
   validateBody(requestResetEmailSchema),
   ctrlWrapper(requestResetEmailController),
+);
+
+router.post(
+  '/reset-pwd',
+  validateBody(resetPasswordSchema),
+  ctrlWrapper(resetPasswordController),
 );
 
 export default router;
