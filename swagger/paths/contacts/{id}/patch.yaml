@@ -61,6 +61,8 @@ responses:
               example: Successfully patched a contact!
             data:
               $ref: ../../../components/schemas/contact.yaml
+  '400':
+    $ref: ../../../components/responses/400.yaml
   '401':
     $ref: ../../../components/responses/401.yaml
   '404':
