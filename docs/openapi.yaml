@@ -13,7 +13,7 @@ tags:
   - name: Auth
     description: Auth operations.
 servers:
-  - url: https://api.mycontacts.com
+  - url: http://localhost:4000
   - url: "https://your-deployed-url.com"
 paths:
   /auth/register:
