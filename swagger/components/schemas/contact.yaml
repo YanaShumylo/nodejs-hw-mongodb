@@ -7,9 +7,6 @@ required:
   - isFavourite
   - contactType
   - userId
-  - photo
-  - createdAt
-  - updatedAt
 properties:
   _id:
     description: "Contact's id"
@@ -44,7 +41,7 @@ properties:
   photo:
     description: "Link to contact's photo"
     type: string
-    default: null
+    format: binary
     example: https://res.cloudinary.com/uqwgdu/image/uploads/image.png
   createdAt:
     type: string

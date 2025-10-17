@@ -11,10 +11,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:4000"
-    },
-    {
-      "url": "https://your-deployed-url.com"
+      "url": "https://nodejs-hw-mongodb-7-hdem.onrender.com"
     }
   ],
   "tags": [
